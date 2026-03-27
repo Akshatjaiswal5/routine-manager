@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#0f172a"/>
+  <!-- Leaf shape -->
+  <path d="M256 100 C320 100 390 160 390 256 C390 330 330 390 256 412 C182 390 122 330 122 256 C122 160 192 100 256 100Z" fill="#4ade80" opacity="0.15"/>
+  <!-- Leaf stem -->
+  <path d="M256 412 L256 280" stroke="#4ade80" stroke-width="14" stroke-linecap="round"/>
+  <!-- Leaf outline -->
+  <path d="M256 140 C310 140 368 188 368 256 C368 318 318 374 256 395 C194 374 144 318 144 256 C144 188 202 140 256 140Z" stroke="#4ade80" stroke-width="14" fill="none" stroke-linejoin="round"/>
+  <!-- Center vein -->
+  <path d="M256 395 C256 350 256 280 256 200" stroke="#4ade80" stroke-width="8" stroke-linecap="round" opacity="0.5"/>
+  <!-- Check mark -->
+  <path d="M208 256 L240 288 L304 220" stroke="#4ade80" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>
