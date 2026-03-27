@@ -7,7 +7,7 @@ const today = () => format(new Date(), 'yyyy-MM-dd')
 
 export async function getModules() {
   const { data, error } = await supabase
-    .from('care_pal_modules')
+    .from('modules')
     .select('*')
     .order('sort_order')
   if (error) throw error
@@ -16,7 +16,7 @@ export async function getModules() {
 
 export async function createModule(module) {
   const { data, error } = await supabase
-    .from('care_pal_modules')
+    .from('modules')
     .insert(module)
     .select()
     .single()
@@ -26,7 +26,7 @@ export async function createModule(module) {
 
 export async function updateModule(id, updates) {
   const { data, error } = await supabase
-    .from('care_pal_modules')
+    .from('modules')
     .update(updates)
     .eq('id', id)
     .select()
@@ -36,14 +36,14 @@ export async function updateModule(id, updates) {
 }
 
 export async function deleteModule(id) {
-  const { error } = await supabase.from('care_pal_modules').delete().eq('id', id)
+  const { error } = await supabase.from('modules').delete().eq('id', id)
   if (error) throw error
 }
 
 // ─── Tasks ───────────────────────────────────────────────────────────────────
 
 export async function getTasks(moduleId) {
-  let query = supabase.from('care_pal_tasks').select('*, care_pal_modules(name, color, icon)').order('sort_order')
+  let query = supabase.from('tasks').select('*, modules(name, color, icon)').order('sort_order')
   if (moduleId) query = query.eq('module_id', moduleId)
   const { data, error } = await query
   if (error) throw error
@@ -52,7 +52,7 @@ export async function getTasks(moduleId) {
 
 export async function createTask(task) {
   const { data, error } = await supabase
-    .from('care_pal_tasks')
+    .from('tasks')
     .insert(task)
     .select()
     .single()
@@ -62,7 +62,7 @@ export async function createTask(task) {
 
 export async function updateTask(id, updates) {
   const { data, error } = await supabase
-    .from('care_pal_tasks')
+    .from('tasks')
     .update(updates)
     .eq('id', id)
     .select()
@@ -72,7 +72,7 @@ export async function updateTask(id, updates) {
 }
 
 export async function deleteTask(id) {
-  const { error } = await supabase.from('care_pal_tasks').delete().eq('id', id)
+  const { error } = await supabase.from('tasks').delete().eq('id', id)
   if (error) throw error
 }
 
@@ -80,7 +80,7 @@ export async function deleteTask(id) {
 
 export async function getLogsForDate(date) {
   const { data, error } = await supabase
-    .from('care_pal_task_logs')
+    .from('task_logs')
     .select('*')
     .eq('date', date)
   if (error) throw error
@@ -89,7 +89,7 @@ export async function getLogsForDate(date) {
 
 export async function getLogsForRange(from, to) {
   const { data, error } = await supabase
-    .from('care_pal_task_logs')
+    .from('task_logs')
     .select('*')
     .gte('date', from)
     .lte('date', to)
@@ -100,7 +100,7 @@ export async function getLogsForRange(from, to) {
 
 export async function upsertLog(taskId, date, status, note = null) {
   const { data, error } = await supabase
-    .from('care_pal_task_logs')
+    .from('task_logs')
     .upsert(
       { task_id: taskId, date, status, note },
       { onConflict: 'task_id,date' }
@@ -114,7 +114,7 @@ export async function upsertLog(taskId, date, status, note = null) {
 export async function postponeTask(taskId, newDueDate) {
   // Update next_due_date on the task
   const { data, error } = await supabase
-    .from('care_pal_tasks')
+    .from('tasks')
     .update({ next_due_date: newDueDate })
     .eq('id', taskId)
     .select()
@@ -127,6 +127,6 @@ export async function postponeTask(taskId, newDueDate) {
 
 export async function completeScheduledTask(taskId, intervalDays) {
   const nextDue = format(addDays(new Date(), intervalDays), 'yyyy-MM-dd')
-  await supabase.from('care_pal_tasks').update({ next_due_date: nextDue }).eq('id', taskId)
+  await supabase.from('tasks').update({ next_due_date: nextDue }).eq('id', taskId)
   await upsertLog(taskId, today(), 'done')
 }
