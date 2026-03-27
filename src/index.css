@@ -26,5 +26,5 @@ body {
 .page-content {
   flex: 1;
   overflow-y: auto;
-  padding-bottom: calc(5rem + env(safe-area-inset-bottom));
+  padding-bottom: calc(4rem + env(safe-area-inset-bottom));
 }

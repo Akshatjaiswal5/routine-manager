@@ -35,9 +35,8 @@ export default function BottomNav() {
   return (
     <nav
       className="fixed bottom-0 left-0 right-0 bg-slate-900/95 backdrop-blur border-t border-slate-800"
-      style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
     >
-      <div className="flex justify-around items-center h-16">
+      <div className="flex justify-around items-center h-16" style={{ marginBottom: 'env(safe-area-inset-bottom)' }}>
         {tabs.map((tab) => (
           <NavLink
             key={tab.to}
