@@ -1,17 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFC00"/>
+      <stop offset="100%" stop-color="#FFB300"/>
+    </linearGradient>
+  </defs>
   <!-- Background -->
-  <rect width="512" height="512" rx="112" fill="#FFFC00"/>
-  <!-- Checklist body -->
-  <rect x="134" y="148" width="244" height="216" rx="24" fill="white"/>
-  <!-- Row 1: checked -->
-  <circle cx="174" cy="208" r="16" fill="#FFFC00"/>
-  <path d="M165 208 L171 214 L183 202" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <rect x="202" y="200" width="112" height="10" rx="5" fill="#1c1c1e" opacity="0.15"/>
-  <!-- Row 2: checked -->
-  <circle cx="174" cy="256" r="16" fill="#FFFC00"/>
-  <path d="M165 256 L171 262 L183 250" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <rect x="202" y="248" width="88" height="10" rx="5" fill="#1c1c1e" opacity="0.15"/>
-  <!-- Row 3: unchecked -->
-  <circle cx="174" cy="304" r="16" fill="none" stroke="#FFFC00" stroke-width="3"/>
-  <rect x="202" y="296" width="100" height="10" rx="5" fill="#1c1c1e" opacity="0.1"/>
+  <rect width="512" height="512" rx="115" fill="url(#g)"/>
+  <!-- Row 1 -->
+  <circle cx="172" cy="182" r="22" fill="white"/>
+  <path d="M162 182 L170 190 L184 174" stroke="#FFCC00" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <rect x="214" y="172" width="128" height="20" rx="10" fill="white"/>
+  <!-- Row 2 -->
+  <circle cx="172" cy="256" r="22" fill="white"/>
+  <path d="M162 256 L170 264 L184 248" stroke="#FFCC00" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <rect x="214" y="246" width="100" height="20" rx="10" fill="white"/>
+  <!-- Row 3 (unchecked) -->
+  <circle cx="172" cy="330" r="22" fill="none" stroke="white" stroke-width="5" opacity="0.6"/>
+  <rect x="214" y="320" width="112" height="20" rx="10" fill="white" opacity="0.6"/>
 </svg>
