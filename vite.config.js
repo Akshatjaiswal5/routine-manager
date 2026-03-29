@@ -12,7 +12,7 @@ export default defineConfig({
         name: 'Routine Manager',
         short_name: 'Routines',
         description: 'Your daily self-care routine tracker',
-        theme_color: '#FFFC00',
+        theme_color: '#30D158',
         background_color: '#f2f2f7',
         display: 'standalone',
         orientation: 'portrait',

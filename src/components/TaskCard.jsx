@@ -13,7 +13,7 @@ export default function TaskCard({ task, log, onDone, onSkip, onPostpone }) {
           className="shrink-0 w-[22px] h-[22px] rounded-full border-2 flex items-center justify-center transition-all"
           style={
             status === 'done'
-              ? { backgroundColor: '#FFFC00', borderColor: '#FFFC00' }
+              ? { backgroundColor: '#30D158', borderColor: '#30D158' }
               : { borderColor: '#c6c6c8' }
           }
         >
@@ -62,7 +62,7 @@ export default function TaskCard({ task, log, onDone, onSkip, onPostpone }) {
             <button
               onClick={() => onDone(task)}
               className="text-[13px] font-semibold px-3 py-1.5 rounded-lg"
-              style={{ color: '#5a4a00', backgroundColor: '#FFFDB0' }}
+              style={{ color: '#166534', backgroundColor: '#E8F8ED' }}
             >
               Done
             </button>

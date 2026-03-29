@@ -73,7 +73,7 @@ export default function Today() {
   if (loading) {
     return (
       <div className="flex-1 flex items-center justify-center">
-        <div className="w-7 h-7 rounded-full border-2 border-t-transparent animate-spin" style={{ borderColor: '#FFFC00', borderTopColor: 'transparent' }} />
+        <div className="w-7 h-7 rounded-full border-2 border-t-transparent animate-spin" style={{ borderColor: '#30D158', borderTopColor: 'transparent' }} />
       </div>
     )
   }
@@ -94,12 +94,12 @@ export default function Today() {
           <div className="mt-4 mb-2">
             <div className="flex justify-between mb-1.5">
               <span className="section-label">{totalDone} of {totalDue} complete</span>
-              <span className="text-[12px] font-semibold" style={{ color: '#FFFC00' }}>{pct}%</span>
+              <span className="text-[12px] font-semibold" style={{ color: '#30D158' }}>{pct}%</span>
             </div>
             <div className="rounded-full overflow-hidden" style={{ height: 4, backgroundColor: '#e5e5ea' }}>
               <div
                 className="h-full rounded-full transition-all duration-500"
-                style={{ width: `${pct}%`, backgroundColor: '#FFFC00' }}
+                style={{ width: `${pct}%`, backgroundColor: '#30D158' }}
               />
             </div>
           </div>

@@ -62,7 +62,7 @@ export default function Manage() {
 
   if (loading) return (
     <div className="flex-1 flex items-center justify-center">
-      <div className="w-7 h-7 rounded-full border-2 border-t-transparent animate-spin" style={{ borderColor: '#FFFC00', borderTopColor: 'transparent' }} />
+      <div className="w-7 h-7 rounded-full border-2 border-t-transparent animate-spin" style={{ borderColor: '#30D158', borderTopColor: 'transparent' }} />
     </div>
   )
 
@@ -76,7 +76,7 @@ export default function Manage() {
             {modules.length === 0 && (
               <div className="text-center py-10 mb-4">
                 <p className="text-[15px] mb-4" style={{ color: '#636366' }}>No modules yet.</p>
-                <button onClick={handleSeedDefaults} className="text-[15px] font-semibold px-5 py-2.5 rounded-xl" style={{ backgroundColor: '#FFFC00', color: '#5a4a00' }}>
+                <button onClick={handleSeedDefaults} className="text-[15px] font-semibold px-5 py-2.5 rounded-xl" style={{ backgroundColor: '#30D158', color: '#ffffff' }}>
                   Add default modules
                 </button>
               </div>
@@ -211,7 +211,7 @@ function SegmentedControl({ options, value, onChange }) {
           key={opt}
           onClick={() => onChange(opt)}
           className="flex-1 py-2 rounded-lg text-[13px] font-semibold capitalize transition-all"
-          style={value === opt ? { backgroundColor: '#FFFC00', color: '#5a4a00', boxShadow: '0 1px 3px rgba(0,0,0,0.12)' } : { color: '#636366' }}
+          style={value === opt ? { backgroundColor: '#30D158', color: '#ffffff', boxShadow: '0 1px 3px rgba(0,0,0,0.12)' } : { color: '#636366' }}
         >
           {opt}
         </button>
@@ -251,7 +251,7 @@ function ModuleForm({ initial, onSave, onCancel }) {
           {MODULE_ICONS.map((ic) => (
             <button key={ic} onClick={() => setIcon(ic)}
               className="w-11 h-11 rounded-xl text-xl flex items-center justify-center transition-all"
-              style={icon === ic ? { backgroundColor: '#FFFDE6', outline: '2px solid #FFFC00' } : { backgroundColor: '#f2f2f7' }}
+              style={icon === ic ? { backgroundColor: '#E8F8ED', outline: '2px solid #30D158' } : { backgroundColor: '#f2f2f7' }}
             >{ic}</button>
           ))}
         </div>
@@ -270,7 +270,7 @@ function ModuleForm({ initial, onSave, onCancel }) {
 
       <button onClick={() => onSave({ name, icon, color })} disabled={!name.trim()}
         className="w-full py-3.5 rounded-xl text-[15px] font-semibold mt-2 disabled:opacity-40"
-        style={{ backgroundColor: '#FFFC00', color: '#5a4a00' }}
+        style={{ backgroundColor: '#30D158', color: '#ffffff' }}
       >
         Save Module
       </button>
@@ -320,7 +320,7 @@ function TaskForm({ initial, onSave, onCancel }) {
           </Field>
           <div className="flex items-center justify-between card px-4 py-3.5 mb-5 cursor-pointer" onClick={() => setIsReschedulable(!isReschedulable)}>
             <span className="text-[15px] font-medium" style={{ color: '#000' }}>Reschedulable</span>
-            <div className="w-12 h-7 rounded-full relative transition-colors shrink-0" style={{ backgroundColor: isReschedulable ? '#FFFC00' : '#e5e5ea' }}>
+            <div className="w-12 h-7 rounded-full relative transition-colors shrink-0" style={{ backgroundColor: isReschedulable ? '#30D158' : '#e5e5ea' }}>
               <div className={`w-6 h-6 rounded-full bg-white shadow absolute top-0.5 transition-transform ${isReschedulable ? 'translate-x-5' : 'translate-x-0.5'}`} />
             </div>
           </div>
@@ -335,7 +335,7 @@ function TaskForm({ initial, onSave, onCancel }) {
         onClick={() => onSave({ name, task_type: taskType, slot: taskType==='daily'?slot:null, interval_days: taskType==='scheduled'?intervalDays:null, next_due_date: taskType==='scheduled'?nextDueDate:null, deadline_time: deadlineTime||null, is_reschedulable: taskType==='scheduled'?isReschedulable:false })}
         disabled={!name.trim()}
         className="w-full py-3.5 rounded-xl text-[15px] font-semibold mt-2 disabled:opacity-40"
-        style={{ backgroundColor: '#FFFC00', color: '#5a4a00' }}
+        style={{ backgroundColor: '#30D158', color: '#ffffff' }}
       >
         Save Task
       </button>

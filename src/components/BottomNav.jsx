@@ -50,7 +50,7 @@ export default function BottomNav() {
             to={tab.to}
             end
             className={({ isActive }) =>
-              `flex flex-col items-center gap-[3px] px-6 transition-all ${isActive ? 'text-[#FFFC00]' : 'text-[#8e8e93]'}`
+              `flex flex-col items-center gap-[3px] px-6 transition-all ${isActive ? 'text-[#30D158]' : 'text-[#8e8e93]'}`
             }
           >
             {tab.icon}
